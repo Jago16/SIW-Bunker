@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SIW-Bunker | Home</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-container">
+        <img src="/logo.png" alt="SIW-Bunker Logo" class="logo">
+    </div>
+
+    <h1>☢️ Benvenuto in SIW-Bunker</h1>
+    <p>Gestione di bunker, missioni e sopravvissuti in uno scenario post-apocalittico.</p>
+
+    <div class="actions">
+        <a th:href="@{/login}" class="btn">🔐 Login</a>
+        <a th:href="@{/register}" class="btn">📝 Registrati</a>
+		<a href="/bunker-mappa" class="btn special">🗺️ Trova il bunker più vicino a te</a>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 SIW-Bunker. Tutti i diritti riservati.</p>
+    </footer>
+</div>
+
+
+</body>
+</html>

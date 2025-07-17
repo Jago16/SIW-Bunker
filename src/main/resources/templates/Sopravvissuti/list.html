@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Sopravvissuti</title>
+</head>
+<body>
+
+<h1>Lista dei sopravvissuti</h1>
+
+<a th:href="@{/sopravvissuti/create}">➕ Aggiungi nuovo sopravvissuto</a>
+<br><br>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Ruolo</th>
+        <th>Età</th>
+        <th>Salute Mentale</th>
+        <th>Salute Fisica</th>
+        <th>Bunker</th>
+        <th>Dettagli</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="sopravvissuto : ${sopravvissuti}">
+        <td th:text="${sopravvissuto.nome}">Nome</td>
+        <td th:text="${sopravvissuto.ruolo}">Ruolo</td>
+        <td th:text="${sopravvissuto.eta}">Età</td>
+        <td th:text="${sopravvissuto.saluteMentale}">Salute Mentale</td>
+        <td th:text="${sopravvissuto.saluteFisica}">Salute Fisica</td>
+        <td th:text="${sopravvissuto.bunker.nome}">Bunker</td>
+        <td><a th:href="@{'/sopravvissuti/' + ${sopravvissuto.id}}">👁️ Dettagli</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

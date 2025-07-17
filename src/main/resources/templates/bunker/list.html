@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista Bunker</title>
+</head>
+<body>
+<h1>Lista Bunker</h1>
+
+<a th:href="@{/bunkers/create}">➕ Crea nuovo bunker</a>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Livello Sicurezza</th>
+        <th>Capacità</th>
+        <th>Stato</th>
+        <th>Dettagli</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="bunker : ${bunkers}">
+        <td th:text="${bunker.nome}"></td>
+        <td th:text="${bunker.livelloSicurezza}"></td>
+        <td th:text="${bunker.capacitaMassima}"></td>
+        <td th:text="${bunker.stato}"></td>
+        <td><a th:href="@{'/bunkers/' + ${bunker.id}}">Visualizza</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

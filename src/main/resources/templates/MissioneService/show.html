@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dettaglio Missione</title>
+</head>
+<body>
+
+<h1>Dettaglio Missione</h1>
+
+<ul>
+    <li><strong>Tipo:</strong> <span th:text="${missione.tipo}"></span></li>
+    <li><strong>Difficoltà:</strong> <span th:text="${missione.difficolta}"></span></li>
+    <li><strong>Stato:</strong> <span th:text="${missione.stato}"></span></li>
+    <li><strong>Bunker:</strong> <span th:text="${missione.bunker.nome}"></span></li>
+</ul>
+
+<a th:href="@{/missioni}">🔙 Torna alla lista</a>
+
+</body>
+</html>

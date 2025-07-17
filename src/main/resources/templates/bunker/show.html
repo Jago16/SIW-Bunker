@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dettaglio Bunker</title>
+</head>
+<body>
+<h1 th:text="'Bunker: ' + ${bunker.nome}"></h1>
+
+<ul>
+    <li><strong>Livello Sicurezza:</strong> <span th:text="${bunker.livelloSicurezza}"></span></li>
+    <li><strong>Capacità Massima:</strong> <span th:text="${bunker.capacitaMassima}"></span></li>
+    <li><strong>Stato:</strong> <span th:text="${bunker.stato}"></span></li>
+</ul>
+
+<a th:href="@{/bunkers}">🔙 Torna alla lista</a>
+</body>
+</html>

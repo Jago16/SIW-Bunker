@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuova Missione</title>
+</head>
+<body>
+
+<h1>🛠️ Crea una nuova missione</h1>
+
+<form th:action="@{/missioni/create}" th:object="${missione}" method="post">
+
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" th:field="*{tipo}" required/>
+    <br/>
+
+    <label for="difficolta">Difficoltà:</label>
+    <input type="number" id="difficolta" th:field="*{difficolta}" min="1" max="10" required/>
+    <br/>
+
+    <label for="stato">Stato:</label>
+    <input type="text" id="stato" th:field="*{stato}" required/>
+    <br/>
+
+    <label for="bunker">Bunker:</label>
+    <select id="bunker" th:field="*{bunker}">
+        <option th:each="bunker : ${bunkerList}" th:value="${bunker.id}" th:text="${bunker.nome}"></option>
+    </select>
+    <br/><br/>
+
+    <button type="submit">✅ Crea missione</button>
+</form>
+
+<a th:href="@{/missioni}">🔙 Torna alla lista</a>
+
+</body>
+</html>

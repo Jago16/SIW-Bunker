@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Crea Sopravvissuto</title>
+</head>
+<body>
+
+<h1>Crea un nuovo sopravvissuto</h1>
+
+<form th:action="@{/sopravvissuti/create}" th:object="${sopravvissuto}" method="post">
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" th:field="*{nome}" required><br><br>
+
+    <label for="ruolo">Ruolo:</label>
+    <input type="text" id="ruolo" th:field="*{ruolo}" required><br><br>
+
+    <label for="eta">Età:</label>
+    <input type="number" id="eta" th:field="*{eta}" required><br><br>
+
+    <label for="saluteMentale">Salute Mentale (0-100):</label>
+    <input type="number" id="saluteMentale" th:field="*{saluteMentale}" min="0" max="100" required><br><br>
+
+    <label for="saluteFisica">Salute Fisica (0-100):</label>
+    <input type="number" id="saluteFisica" th:field="*{saluteFisica}" min="0" max="100" required><br><br>
+
+    <label for="bunker">Bunker:</label>
+    <select id="bunker" th:field="*{bunker}">
+        <option th:each="b : ${bunkerList}" th:value="${b}" th:text="${b.nome}">Bunker</option>
+    </select><br><br>
+
+    <button type="submit">💾 Salva</button>
+</form>
+
+<a th:href="@{/sopravvissuti}">🔙 Torna alla lista</a>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Benvenuto, <span th:text="${username}">Utente</span>!</h1>
+
+    <!-- Se ADMIN -->
+    <div th:if="${isAdmin}">
+        <h2>Area Admin</h2>
+        <ul>
+            <li><a href="/sopravvissuti/create">➕ Crea sopravvissuto</a></li>
+            <li><a href="/bunker">🏢 Gestione bunker</a></li>
+            <li><a href="/missioni/create">🛠️ Crea missione</a></li>
+            <li><a href="/eventi/create">🗓️ Crea evento</a></li>
+        </ul>
+    </div>
+
+    <!-- Se USER -->
+    <div th:unless="${isAdmin}">
+        <h2>Area Sopravvissuto</h2>
+        <ul>
+            <li><a href="/sopravvissuti/profilo">👤 Il mio profilo</a></li>
+            <li><a href="/missioni">🎯 Le mie missioni</a></li>
+            <li><a href="/eventi">🗓️ Eventi disponibili</a></li>
+        </ul>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Logout</button>
+    </form>
+</div>
+
+</body>
+</html>

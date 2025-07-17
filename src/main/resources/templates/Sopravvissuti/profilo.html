@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Profilo Sopravvissuto</title>
+</head>
+<body>
+
+<h1 th:text="'Ciao ' + ${me.nome} + ' (' + ${me.ruolo} + ')'"></h1>
+
+<h2>Il tuo stato:</h2>
+<ul>
+    <li><strong>Età:</strong> <span th:text="${me.eta}"></span></li>
+    <li><strong>Salute Mentale:</strong> <span th:text="${me.saluteMentale} + '%'"></span></li>
+    <li><strong>Salute Fisica:</strong> <span th:text="${me.saluteFisica} + '%'"></span></li>
+</ul>
+
+<hr>
+
+<h2>Bunker: <span th:text="${bunker.nome}"></span></h2>
+<ul>
+    <li><strong>Livello Sicurezza:</strong> <span th:text="${bunker.livelloSicurezza}"></span></li>
+    <li><strong>Capacità Massima:</strong> <span th:text="${bunker.capacitaMassima}"></span></li>
+    <li><strong>Stato:</strong> <span th:text="${bunker.stato}"></span></li>
+</ul>
+
+<hr>
+
+<h2>Altri sopravvissuti nel tuo bunker:</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Ruolo</th>
+            <th>Salute Mentale</th>
+            <th>Salute Fisica</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="s : ${altri}">
+            <td th:text="${s.nome}"></td>
+            <td th:text="${s.ruolo}"></td>
+            <td th:text="${s.saluteMentale} + '%'"></td>
+            <td th:text="${s.saluteFisica} + '%'"></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Missioni del bunker:</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Difficoltà</th>
+            <th>Stato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="m : ${missioni}">
+            <td th:text="${m.tipo}"></td>
+            <td th:text="${m.difficolta}"></td>
+            <td th:text="${m.stato}"></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Stanze del bunker:</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Stato</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="stanza : ${stanze}">
+            <td th:text="${stanza.tipo}"></td>
+            <td th:text="${stanza.stato}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

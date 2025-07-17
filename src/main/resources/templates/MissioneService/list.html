@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Missioni del Bunker</title>
+</head>
+<body>
+
+<h1>Missioni del tuo bunker</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Tipo</th>
+            <th>Difficoltà</th>
+            <th>Stato</th>
+            <th>Dettagli</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="missione : ${missioni}">
+            <td th:text="${missione.tipo}"></td>
+            <td th:text="${missione.difficolta}"></td>
+            <td th:text="${missione.stato}"></td>
+            <td><a th:href="@{'/missioni/' + ${missione.id}}">Visualizza</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Mostra bottone crea solo se l'utente è admin -->
+<div sec:authorize="hasAuthority('ADMIN')">
+    <a th:href="@{/missioni/create}">➕ Crea nuova missione</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuovo Evento</title>
+</head>
+<body>
+
+<h1>📝 Crea un nuovo evento</h1>
+
+<form th:action="@{/eventi/create}" th:object="${evento}" method="post">
+
+    <label for="tipo">Tipo:</label>
+    <input type="text" id="tipo" th:field="*{tipo}" required/><br/>
+
+    <label for="descrizione">Descrizione:</label><br/>
+    <textarea id="descrizione" th:field="*{descrizione}" rows="4" cols="50" required></textarea><br/>
+
+    <label for="data">Data:</label>
+    <input type="date" id="data" th:field="*{	<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <title>Nuovo Evento</title>
+	</head>
+	<body>
+
+	<h1>📝 Crea un nuovo evento</h1>
+
+	<form th:action="@{/eventi/create}" th:object="${evento}" method="post">
+
+	    <label for="tipo">Tipo:</label>
+	    <input type="text" id="tipo" th:field="*{tipo}" required/><br/>
+
+	    <label for="descrizione">Descrizione:</label><br/>
+	    <textarea id="descrizione" th:field="*{descrizione}" rows="4" cols="50" required></textarea><br/>
+
+	    <label for="data">Data:</label>
+	    <input type="date" id="data" th:field="*{data}" required/><br/>
+
+	    <label for="bunker">Bunker:</label>
+	    <select th:field="*{bunker}">
+	        <option th:each="b : ${bunkerList}" th:value="${b.id}" th:text="${b.nome}"></option>
+	    </select><br/><br/>
+
+	    <button type="submit">✅ Crea Evento</button>
+	</form>
+
+	<a th:href="@{/eventi}">🔙 Torna alla lista</a>
+
+	</body>
+	</html>
+data}" required/><br/>
+
+    <label for="bunker">Bunker:</label>
+    <select th:field="*{bunker}">
+        <option th:each="b : ${bunkerList}" th:value="${b.id}" th:text="${b.nome}"></option>
+    </select><br/><br/>
+
+    <button type="submit">✅ Crea Evento</button>
+</form>
+
+<a th:href="@{/eventi}">🔙 Torna alla lista</a>
+
+</body>
+</html>
