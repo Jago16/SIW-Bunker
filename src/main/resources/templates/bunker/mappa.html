@@ -15,12 +15,12 @@
 <body>
 
 <div class="container">
-    <h1>🗺️ Trova il bunker più vicino a te</h1>
+    <h1>Trova il bunker più vicino a te</h1>
     <p>Autorizza l'accesso alla tua posizione per visualizzare la mappa:</p>
 
     <div id="map"></div>
 
-    <a th:href="@{/}" class="btn">⬅️ Torna alla Home</a>
+    <a th:href="@{/}" class="btn">Torna alla Home</a>
 </div>
 
 <!-- 🔽 Bunker dal backend -->
@@ -50,7 +50,7 @@
                     const userMarker = new google.maps.Marker({
                         position: userPos,
                         map,
-                        title: "📍 Sei qui!",
+                        title: "Sei qui!",
                         icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
                     });
 
@@ -106,7 +106,7 @@
                         new google.maps.Marker({
                             position: nearest,
                             map,
-                            title: "🔰 Bunker più vicino",
+                            title: "Bunker più vicino",
                             icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
                         });
                     }

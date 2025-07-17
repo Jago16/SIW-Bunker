@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>📜 Eventi recenti del bunker</h1>
+<h1>Eventi recenti del bunker</h1>
 
 <table border="1">
     <thead>
@@ -21,14 +21,14 @@
             <td th:text="${evento.tipo}"></td>
             <td th:text="${evento.descrizione}"></td>
             <td th:text="${#temporals.format(evento.data, 'dd/MM/yyyy')}"></td>
-            <td><a th:href="@{'/eventi/' + ${evento.id}}">🔍</a></td>
+            <td><a th:href="@{'/eventi/' + ${evento.id}}"></a></td>
         </tr>
     </tbody>
 </table>
 
 <!-- Solo per admin -->
 <div sec:authorize="hasAuthority('ADMIN')">
-    <a th:href="@{/eventi/create}">➕ Crea nuovo evento</a>
+    <a th:href="@{/eventi/create}">Crea nuovo evento</a>
 </div>
 
 </body>

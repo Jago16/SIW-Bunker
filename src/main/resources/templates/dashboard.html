@@ -13,10 +13,10 @@
     <div th:if="${isAdmin}">
         <h2>Area Admin</h2>
         <ul>
-            <li><a href="/sopravvissuti/create">➕ Crea sopravvissuto</a></li>
-            <li><a href="/bunker">🏢 Gestione bunker</a></li>
-            <li><a href="/missioni/create">🛠️ Crea missione</a></li>
-            <li><a href="/eventi/create">🗓️ Crea evento</a></li>
+            <li><a href="/sopravvissuti/create">Crea sopravvissuto</a></li>
+            <li><a href="/bunker">Gestione bunker</a></li>
+            <li><a href="/missioni/create"> Crea missione</a></li>
+            <li><a href="/eventi/create"> Crea evento</a></li>
         </ul>
     </div>
 
@@ -24,9 +24,9 @@
     <div th:unless="${isAdmin}">
         <h2>Area Sopravvissuto</h2>
         <ul>
-            <li><a href="/sopravvissuti/profilo">👤 Il mio profilo</a></li>
-            <li><a href="/missioni">🎯 Le mie missioni</a></li>
-            <li><a href="/eventi">🗓️ Eventi disponibili</a></li>
+            <li><a href="/sopravvissuti/profilo"> Il mio profilo</a></li>
+            <li><a href="/missioni"> Le mie missioni</a></li>
+            <li><a href="/eventi"> Eventi disponibili</a></li>
         </ul>
     </div>
 

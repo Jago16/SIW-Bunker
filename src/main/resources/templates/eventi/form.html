@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>📝 Crea un nuovo evento</h1>
+<h1>Crea un nuovo evento</h1>
 
 <form th:action="@{/eventi/create}" th:object="${evento}" method="post">
 
@@ -23,7 +23,7 @@
 	</head>
 	<body>
 
-	<h1>📝 Crea un nuovo evento</h1>
+	<h1>Crea un nuovo evento</h1>
 
 	<form th:action="@{/eventi/create}" th:object="${evento}" method="post">
 
@@ -41,10 +41,10 @@
 	        <option th:each="b : ${bunkerList}" th:value="${b.id}" th:text="${b.nome}"></option>
 	    </select><br/><br/>
 
-	    <button type="submit">✅ Crea Evento</button>
+	    <button type="submit">Crea Evento</button>
 	</form>
 
-	<a th:href="@{/eventi}">🔙 Torna alla lista</a>
+	<a th:href="@{/eventi}">Torna alla lista</a>
 
 	</body>
 	</html>
@@ -55,10 +55,10 @@ data}" required/><br/>
         <option th:each="b : ${bunkerList}" th:value="${b.id}" th:text="${b.nome}"></option>
     </select><br/><br/>
 
-    <button type="submit">✅ Crea Evento</button>
+    <button type="submit">Crea Evento</button>
 </form>
 
-<a th:href="@{/eventi}">🔙 Torna alla lista</a>
+<a th:href="@{/eventi}">Torna alla lista</a>
 
 </body>
 </html>
